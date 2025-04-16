@@ -1,0 +1,242 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+canvas {
+    max-width: 700px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive font */
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.checkbox{
+    margin-top:1rem;
+    width: 100%;
+}
+
+.header-summary-buy-page{
+    text-align:center;
+    margin-top:1rem;
+}
+
+.month-selected{
+    width: 42%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+/* สไตล์สำหรับช่องค้นหา */
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ช่องว่างระหว่าง search bar และ filter */
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+
+
+/* Filter Icon */
+.filter-icon {
+    margin-left: auto;
+    /* ดันไอคอน Filter ไปขวาสุด */
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* เริ่มต้นซ่อนอยู่ด้านขวา */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.filter-sidebar.open {
+    right: 0;
+    /* แสดง Sidebar */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #81B3D2;
+    color: #fff;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-select{
+    max-width: 100%;
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-left:1rem;
+}
+
+label{
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+/* Header styles */
+.header {
+    position: sticky;
+    background: #f0f8ff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: #4169e1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    padding: 0.5rem 0;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+}
+
+/* Main content */
+.main-content {
+    padding: 1rem;
+}
+
+/* สไตล์สำหรับปุ่ม Reset */ 
+.filter-sidebar .reset-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336; /* สีแดง */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px; /* มุมโค้ง */
+    transition: background-color 0.3s ease;
+    margin-left: 12px;
+    margin-top:10px;
+}
+
+.filter-sidebar .reset-button:hover {
+    background-color: #e53935; /* สีแดงเข้มขึ้นเมื่อ hover */
+}
+
+.filter-sidebar .reset-button:active {
+    background-color: #d32f2f; /* สีแดงเข้มสุดเมื่อคลิก */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .header {
+        position: sticky;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .equipment-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletable.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="approve_page.html" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="approve_clam_page.html" class="nav-item">อนุมัติเคลม</a>
+            <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
+            <a href="case_report_page.html" class="nav-item">ดูสรุปรายงานเคส</a>
+            <a href="history_fixed_page.html" class="nav-item active">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <div class="search-section">
+
+        <div class="search-container">
+            <input type="text" placeholder="ค้นหา..." class="search-input">
+            <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i> <!-- ไอคอนแว่นขยาย -->
+            </button>
+        </div>
+        <div class="filter-icon">
+            <i class="fa-solid fa-filter"></i> <!-- ไอคอน Filter -->
+        </div>
+
+        <div class="filter-sidebar" id="filterSidebar">
+            <div class="sidebar-header">
+                <h2>ตัวกรอง</h2>
+                <button class="close-sidebar">&times;</button>
+            </div>
+            <div class="sidebar-content">
+                <label for="calendarSelect">เลือกวันที่:</label>
+                <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่"
+                    value="2025-01-22"> ถึง
+                <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่"
+                    value="2025-01-22">
+
+                <label for="">ระดับรถ:</label>
+                <div class="checkbox">
+                    <input type="checkbox" checked> Level 1
+                    <input type="checkbox" checked> Level 2
+                    <input type="checkbox" checked> Level 3
+                </div> <br>
+
+                <label for="">สาเหตุ:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>เลือกสาเหตุ</option>
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">ชำรุด</option>
+                    <option value="">หมดอายุ</option>
+                    <option value="">อื่น ๆ</option>
+                </select>
+
+                <label for="">อะไหล่:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>เลือกอะไหล่</option>
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">เครื่องยนต์</option>
+                    <option value="">ยาง</option>
+                    <option value="">เบรก</option>
+                </select>
+
+                <label for="">อุปกรณ์ทางการแพทย์ในรถ:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>อุปกรณ์ทางการแพทย์ในรถ</option>
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">พร้อมใช้งาน</option>
+                    <option value="">ไม่พร้อมใช้งาน</option>
+                </select>
+
+                <label for="">สถานะการซ่อม:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>สถานะการซ่อม</option>
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">รออะไหล่</option>
+                    <option value="">ซ่อม</option>
+                    <option value="">พร้อมใช้</option>
+                </select>
+
+                <label for="">ค่าใช้จ่าย:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>ค่าใช้จ่าย</option>
+                    <option value="">ทั้งหมด</option>
+                    <option value="" selected>ต่ำกว่า 10,000 บาท</option>
+                    <option value="">10,000-50,000 บาท</option>
+                    <option value="">มากกว่า 50,000 บาท</option>
+                </select>
+
+                <label for="">ความถี่ในการซ่อม:</label>
+                <p>ผ่านการซ่อมมาแล้ว</p>
+                <input class="inputnumb" type="number" value="0" max="100" min="0"> ครั้ง
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <select class="select" name="option" style="margin-left: 17%;" onchange="location = this.value;">
+        <option value="history_fixed_page.html" selected>รถพยาบาล</option>
+        <option value="history_fixed_page_2.html">อุปกรณ์ทางการแพทย์</option>
+    </select>
+
+    <main class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ทะเบียนรถ</th>
+                    <th>ระดับรถ</th>
+                    <th>บันทึกโดย</th>
+                    <th>วันที่บันทึก(ว-ด-ป)</th>
+                    <th>วันที่ซ่อมเสร็จ</th>
+                    <th>สาเหตุ</th>
+                    <th>สถานะการซ่อม</th>
+                    <th>อุปกรณ์ทางการแพทย์ในรถ</th>
+                    <th>ค่าใช้จ่าย(บาท)</th>
+                    <th>ผ่านการซ่อมมาแล้ว(ครั้ง)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <img
+                            src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg"
+                            alt="เตียงผู้ป่วยแบบไฟฟ้า" class="equipment-image"></td>
+                    <td>กขค 372</td>
+                    <td>Level 3</td>
+                    <td>นายเปรี้ยว แซ่บ</td>
+                    <td>22-01-2025</td>
+                    <td>22-01-2025</td>
+                    <td>มีกลิ่นอับ</td>
+                    <td>พร้อมใช้</td>
+                    <td>พร้อมใช้งาน</td>
+                    <td>300</td>
+                    <td>3</td>
+
+                </tr>
+                <tr>
+                    <td><img src="img/van-ambulance-vehicle-emergency-medical-services-toyota-commuter-abl-commu-alsv-wang-saphung-hospital-loei-carryboy.jpg"
+                            alt="ถังแก๊สออกซิเจน" class="equipment-image"></td>
+                    <td>ณน 879</td>
+                    <td>Level 1</td>
+                    <td>นางกาแฟ ขมคอ</td>
+                    <td>22-01-2025</td>
+                    <td>25-01-2025</td>
+                    <td>ยางรั่ว</td>
+                    <td>รออะไหล่</td>
+                    <td>ไม่พร้อมใช้งาน
+                        <div>
+                            <button onclick="openModal()" style="border: transparent; background-color: transparent; font-weight: bolder; cursor: pointer;"
+                            >ดูรายละเอียด</button>
+                        </div>
+                    </td>
+                    <td>3,000</td>
+                    <td>0</td>
+                </tr>
+        </table>
+
+        <!-- Modal เมื่อกด ดูรายละเอียด -->
+        <div class="overlay" onclick="closeModal()"></div>
+        <div class="modal">
+            <h3>อุปกรณ์ทางการแพทย์ในรถ ทะเบียน: ณน 879</h3>
+            <p><strong>AED:</strong> - </p>
+            <p><strong>เตียง:</strong> ชำรุด</p>
+            <p><strong>เครื่องช่วยหายใจ:</strong> - </p>
+            <p><strong>เฝือกลม:</strong> ชำรุด</p>
+            <p><strong>ถังออกซิเจน:</strong> หมดอายุ</p>
+            <p><strong>อุปกรณ์ปฐมพยาบาล:</strong> - </p>
+            <div class="modal-buttons">
+                <button class="close" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // สคริปต์สำหรับเปิด-ปิด Sidebar
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.querySelector(".filter-icon");
+            const sidebar = document.getElementById("filterSidebar");
+            const closeSidebar = document.querySelector(".close-sidebar");
+
+            // เปิด Sidebar
+            filterIcon.addEventListener("click", () => {
+                sidebar.classList.add("open");
+            });
+
+            // ปิด Sidebar
+            closeSidebar.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+
+            // ปิด Sidebar เมื่อคลิกนอก Sidebar
+            document.addEventListener("click", (e) => {
+                if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+        });
+
+        // ตั้งค่าปฏิทิน Flatpickr
+        flatpickr("#calendarSelect", {
+            dateFormat: "Y-m-d",  // รูปแบบวันที่เป็น YYYY-MM-DD
+            onChange: function (selectedDates, dateStr, instance) {
+                // เมื่อผู้ใช้เลือกวันที่, เรียกใช้งานฟังก์ชัน updateChart
+                updateChart(dateStr);
+            }
+        });
+
+        // ฟังก์ชันสำหรับเปิด Modal แสดงรายละเอียดของอุปกรณ์ทางการแพทย์ที่ไม่พร้อมใช้งาน
+        function openModal() {
+            document.querySelector('.modal').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #8BBAD4;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Title of page */
+.success {
+    text-align: center;
+    margin: 100px auto;
+    padding: 50px;
+    background-color: #d1e7f8;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+.reversed_button{
+    display: flex;
+    justify-content: center;
+}
+.reversed_button button{
+    padding: 20px 50px;
+    font-size: 20px;
+    background-color: #9FE4DE;
+    border: none;
+    border-radius: 10px;
+    
+}

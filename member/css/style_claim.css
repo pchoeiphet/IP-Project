@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+  display: flex;
+  justify-content: flex-end;
+  /* ชิดขวา */
+  align-items: center;
+  /* ให้อยู่กลางในแกน Y */
+  gap: 15px;
+  margin-left: auto;
+  /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+  background-color: #81b3d2;
+  padding: 5px 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+  gap: 15px;
+  /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+  width: 200px;
+  /* กำหนดความกว้างใหญ่ขึ้น */
+  height: auto;
+  /* รักษาอัตราส่วน */
+}
+
+.social-links a {
+  color: black;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.top-navbar .nav-links a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  /* แบ่งระหว่าง nav-links และ cart-icon */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #bedbeb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  /* ขยายให้เต็มพื้นที่ที่เหลือ */
+  justify-content: center;
+  /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 30px;
+  /* ขนาดรูป */
+  height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+  display: none;
+  /* ซ่อนเมนูเริ่มต้น */
+  position: absolute;
+  top: 100%;
+  /* แสดงใต้ปุ่ม */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 7px 0;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.cart-icon {
+  position: relative;
+  /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+  right: 20px;
+  /* ขยับไอคอนไปทางซ้าย */
+}
+
+.cart-icon a {
+  font-size: 1.5em;
+  /* ปรับขนาดไอคอน */
+  color: #333;
+  /* สีไอคอน */
+  text-decoration: none;
+  /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.main-navbar .nav-links a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+h1 {
+  text-align: center; /* จัดข้อความให้ตรงกลาง */
+  margin: 20px auto 0 auto; /* เพิ่มระยะห่างจากขอบบน (20px) */
+  font-size: 20px; /* ขนาดฟอนต์ */
+  font-weight: normal; /* ห้ามฟอนต์เป็นตัวหนา */
+  margin-bottom: 40px;
+}
+/* Container หลักสำหรับสินค้า */
+.product-container {
+  display: flex;
+  flex-direction: column; /* เรียงสินค้าในแนวดิ่ง */
+  align-items: flex-start; /* ชิดซ้าย */
+  gap: 20px; /* ระยะห่างระหว่างสินค้า */
+  margin: 20px;
+  padding: 10px;
+}
+
+/* การแสดงสินค้าแต่ละอัน */
+.product {
+  display: flex;
+  align-items: center; /* จัดให้อยู่ในแนวเดียวกัน */
+  background-color: #d9f1ff; /* สีพื้นหลังของสินค้า */
+  border: 1px solid #000000; /* กรอบสีเดียวกับพื้นหลัง */
+  padding: 15px;
+  width: 100%; /* เต็มความกว้าง */
+  max-width: 1200px; /* จำกัดความกว้าง */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* ลบขีดเส้นใต้ */
+}
+
+/* รูปภาพสินค้า */
+.product img {
+  width: 120px; /* กำหนดขนาดรูป */
+  height: auto; /* รักษาอัตราส่วน */
+  margin-right: 100px; /* เว้นช่องว่างระหว่างรูปและข้อความ */
+  text-decoration: none; /* ลบขีดเส้นใต้ */
+}
+
+/* ข้อความในสินค้า */
+.product h2 {
+  font-size: 14px;
+  font-weight: normal;
+  color: rgb(0, 0, 0); /* สีข้อความ */
+  margin: 0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  margin-left: 15px; /* เว้นช่องว่างระหว่างข้อความและปุ่ม */
+  flex: 1; /* ให้ข้อความยืดตามพื้นที่ */
+  align-items: center; /* จัดให้อยู่ในแนวเดียวกัน */
+  background-color: #ffffff; /* สีพื้นหลังของสินค้า */
+  padding: 10px;
+  width: auto; /* เต็มความกว้าง */
+  text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+}
+
+/* ปุ่มเครม */
+.product button {
+  background-color: #ffb898; /* สีส้มอ่อน */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s, background-color 0.3s;
+  margin-left: 300px; /* เว้นช่องว่างระหว่างข้อความและปุ่ม */
+  text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+}
+
+.product button:hover {
+  background-color: #e09e64; /* สีส้มเข้มขึ้นเมื่อ hover */
+  transform: scale(1.05); /* ขยายเล็กน้อย */
+}

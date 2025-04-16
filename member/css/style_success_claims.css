@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    /* ชิดขวา */
+    align-items: center;
+    /* ให้อยู่กลางในแกน Y */
+    gap: 15px;
+    margin-left: auto;
+    /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+    background-color: #81B3D2;
+    padding: 5px 20px;
+
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+    gap: 15px;
+    /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+    width: 200px;
+    /* กำหนดความกว้างใหญ่ขึ้น */
+    height: auto;
+    /* รักษาอัตราส่วน */
+}
+
+
+.social-links a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+.top-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    /* แบ่งระหว่าง nav-links และ cart-icon */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #BEDBEB;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    /* ขยายให้เต็มพื้นที่ที่เหลือ */
+    justify-content: center;
+    /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 30px;
+    /* ขนาดรูป */
+    height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+    display: none;
+    /* ซ่อนเมนูเริ่มต้น */
+    position: absolute;
+    top: 100%;
+    /* แสดงใต้ปุ่ม */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart-icon {
+    position: relative;
+    /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+    right: 20px;
+    /* ขยับไอคอนไปทางซ้าย */
+}
+
+
+.cart-icon a {
+    font-size: 1.5em;
+    /* ปรับขนาดไอคอน */
+    color: #333;
+    /* สีไอคอน */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.main-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+.claim-success {
+    position: fixed; /* ให้ภาพอยู่กลางหน้าจอ */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* จัดให้อยู่ตรงกลาง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* กำหนดเฉพาะขนาดที่จำเป็น */
+    height: auto;
+    z-index: 10; /* ไม่ทับ navbar */
+    pointer-events: none; /* ป้องกันการบังคลิก */
+    margin-top: 100px;
+}
+
+.success-image {
+    width: 500px; /* ปรับขนาดรูปภาพ */
+    height: 500px;
+    object-fit: contain; /* ป้องกันภาพผิดสัดส่วน */
+    object-position: center;
+    pointer-events: auto; /* อนุญาตให้คลิกที่รูปภาพ */
+}

@@ -1,0 +1,630 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    /* ชิดขวา */
+    align-items: center;
+    /* ให้อยู่กลางในแกน Y */
+    gap: 15px;
+    margin-left: auto;
+    /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+    background-color: #81B3D2;
+    padding: 5px 20px;
+
+}
+
+.top-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+    gap: 15px;
+    /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+    width: 200px;
+    /* กำหนดความกว้างใหญ่ขึ้น */
+    height: auto;
+    /* รักษาอัตราส่วน */
+}
+
+
+.social-links a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    /* แบ่งระหว่าง nav-links และ cart-icon */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #BEDBEB;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    /* ขยายให้เต็มพื้นที่ที่เหลือ */
+    justify-content: center;
+    /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 30px;
+    /* ขนาดรูป */
+    height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+    display: none;
+    /* ซ่อนเมนูเริ่มต้น */
+    position: absolute;
+    top: 100%;
+    /* แสดงใต้ปุ่ม */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart-icon {
+    position: relative;
+    /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+    right: 20px;
+    /* ขยับไอคอนไปทางซ้าย */
+}
+
+
+.cart-icon a {
+    font-size: 1.5em;
+    /* ปรับขนาดไอคอน */
+    color: #333;
+    /* สีไอคอน */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+    color: #8FB8CD;
+    /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.search-section .filter-icon:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีไอคอนเมื่อเมาส์ไปวาง */
+}
+
+
+.main-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+.top-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* สไตล์สำหรับช่องค้นหา */
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ช่องว่างระหว่าง search bar และ filter */
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.search-container {
+    position: relative;
+    /* ทำให้ปุ่มสามารถวางไอคอนที่ขวาสุดของ input */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 300px;
+    /* ความกว้างของช่องค้นหา */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding-right: 40px;
+    /* ให้มีพื้นที่ข้างขวา สำหรับไอคอนแว่นขยาย */
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    /* ให้ไอคอนอยู่ขวาสุดภายในช่องค้นหา */
+    top: 50%;
+    /* ขยับไอคอนให้ตรงกลางในแนวแกน Y */
+    transform: translateY(-50%);
+    /* ชดเชยเพื่อให้ไอคอนอยู่ตรงกลางพอดี */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+    /* ให้ไอคอนอยู่เหนือช่องค้นหา */
+}
+
+.search-button i {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.search-button:hover i {
+    color: #81B3D2;
+    /* เปลี่ยนสีไอคอนเมื่อ hover */
+}
+
+/* Filter Icon */
+.filter-icon {
+    margin-left: auto;
+    /* ดันไอคอน Filter ไปขวาสุด */
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* calendar zone */
+.calendar-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: flex-end;
+    /* จัดให้อยู่ทางขวา */
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    /* เพิ่มช่องว่างระหว่างปุ่มและข้อความ */
+}
+
+.calendar-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.month-year-display {
+    display: flex;
+    gap: 5px;
+    /* เพิ่มช่องว่างระหว่างเดือนและปี */
+    font-weight: bold;
+    font-size: 1.2em;
+    /* ขนาดตัวอักษร */
+}
+
+#prev-month,
+#next-month {
+    background-color: #FFB898;
+    /* สีพื้นหลัง */
+    color: #fff;
+    /* สีตัวอักษร */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prev-month:hover,
+#next-month:hover {
+    background-color: #ed9166;
+    /* สีเมื่อวางเมาส์ */
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    width: 14.2%;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+.calendar-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+    /* เพิ่ม padding รอบๆ */
+}
+
+.calendar-table td {
+    cursor: pointer;
+}
+
+.calendar-table td.disabled {
+    background-color: #F8E6DE;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.calendar-table td.active {
+    background-color: #FFB898;
+    color: white;
+    border-radius: 0%;
+}
+
+/* สีหัวตารางวัน */
+.header-day {
+    background-color: #FFB898;
+    /* สีพื้นหลัง */
+    color: white;
+    /* สีตัวอักษร */
+    font-weight: bold;
+    /* ตัวหนา */
+    text-align: center;
+    /* จัดข้อความกึ่งกลาง */
+    padding: 10px;
+    /* เพิ่มพื้นที่รอบข้อความ */
+    border-radius: 5px;
+    /* ขอบโค้งมน */
+}
+
+/* Styles for the modal */
+.event-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.event-modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+.close-event-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.event-schedule {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.schedule-column {
+    width: 45%;
+}
+
+.time-slot {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.time-slot.selected {
+    background-color: #FFB898;
+    /* สีส้ม */
+    color: white;
+    /* เปลี่ยนสีข้อความเป็นขาว */
+    border: 1px solid #FFB898;
+    /* เปลี่ยนกรอบให้เป็นสีส้ม */
+}
+
+.confirm-btn {
+    background-color: #FFB898;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.confirm-btn:hover {
+    background-color: #f0824e;
+}
+
+/* ฟอร์ม */
+.form-container {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    flex: 0 0 150px;
+    /* ความกว้างคงที่ของ label */
+    text-align: left;
+    margin-right: 10px;
+}
+
+.form-group input {
+    flex: 0.5;
+    /* ช่องกรอกขยายได้ตามพื้นที่ที่เหลือ */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2D5696;
+}
+
+/* กำหนดความกว้างให้ input[type="date"] ช่องปฏิทิน */
+.form-group input[type="date"] {
+    width: 50%;
+    /* ปรับเปอร์เซ็นต์ตามต้องการ */
+    max-width: 150px;
+    /* จำกัดความกว้างสูงสุด */
+}
+
+
+.form-group select {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #2D5696;
+}
+
+.form-group input[type="number"] {
+    width: 50%;
+    /* ปรับเปอร์เซ็นต์ตามต้องการ */
+    max-width: 80px;
+    /* จำกัดความกว้างสูงสุด */
+}
+
+#place_event_detail {
+    border-radius: 10px;
+    /* ทำให้ขอบมน */
+    padding: 10px;
+    /* เพิ่มระยะห่างด้านใน */
+    border: 1px solid #ccc;
+    /* สีขอบ */
+    width: 50%;
+    /* ขยายเต็มความกว้าง */
+    box-sizing: border-box;
+    /* รวม padding กับ border */
+    font-family: Arial, sans-serif;
+    /* กำหนดฟอนต์ */
+    font-size: 14px;
+    /* ขนาดตัวอักษร */
+}
+
+#place_event_detail:focus {
+    outline: none;
+    /* ลบกรอบขอบขณะโฟกัส */
+    border-color: #007BFF;
+    /* เปลี่ยนสีขอบขณะโฟกัส */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* เพิ่มเงาขณะโฟกัส */
+}
+
+
+.current-date-time {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-submit {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.form-submit button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-submit button:hover {
+    background-color: #e9aa50;
+}
+
+
+/* ให้ฟอร์มอยู่ตรงกลางและใต้ navbar */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 60px;
+    /* ทำให้ฟอร์มอยู่ใต้ navbar */
+}
+
+
+/* การชำระเงิน */
+.payment-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.payment-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.payment-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* ปุ่มยกเลิก */
+.cancel-button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* แถวช้อมูลรถคันที่ วันที่ปฏิบัติงาน และเวลา*/
+.current-date-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    /* บังคับไม่ให้เนื้อหาทำการเปลี่ยนบรรทัด */
+}
+
+.car-info {
+    flex: 1;
+    /* กำหนดพื้นที่ของแต่ละส่วน */
+    text-align: left;
+    /* จัดให้อยู่ซ้าย */
+}
+
+.work-date {
+    flex: 1;
+    text-align: center;
+    /* จัดให้อยู่ตรงกลาง */
+}
+
+.work-time {
+    flex: 0;
+    text-align: center;
+    /* จัดให้อยู่ขวา */
+}
+
+
+
+/* ใช้กับช่องกรอกข้อมูลที่มีจำนวนพยาบาลและจำนวนรถพยาบาล */
+.form-group label {
+    margin-right: 10px;
+    /* ปรับระยะห่างจากช่องกรอกข้อมูล */
+}

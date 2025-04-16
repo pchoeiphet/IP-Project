@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletable.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <title>ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="approve_page.html" class="nav-item">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="approve_clam_page.html" class="nav-item">อนุมัติเคลม</a>
+            <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
+            <a href="case_report_page.html" class="nav-item">ดูสรุปรายงานเคส</a>
+            <a href="history_fixed_page.html" class="nav-item active">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <div class="search-section">
+
+        <div class="search-container">
+            <input type="text" placeholder="ค้นหา..." class="search-input">
+            <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i> <!-- ไอคอนแว่นขยาย -->
+            </button>
+        </div>
+        <div class="filter-icon">
+            <i class="fa-solid fa-filter"></i> <!-- ไอคอน Filter -->
+        </div>
+
+        <div class="filter-sidebar" id="filterSidebar">
+            <div class="sidebar-header">
+                <h2>ตัวกรอง</h2>
+                <button class="close-sidebar">&times;</button>
+            </div>
+            <div class="sidebar-content">
+                <label for="calendarSelect">เลือกวันที่:</label>
+                <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่" value="2025-01-22"> ถึง
+                <input class="calendar-selected" id="calendarSelect" type="text" placeholder="เลือกวันที่" value="2025-01-22">
+
+                <label for="">ประเภท:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">อุปกรณ์วัดและตรวจสุขภาพ</option>
+                    <option value="">อุปกรณ์ช่วยการเคลื่อนไหว</option>
+                    <option value="">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
+                    <option value="">อุปกรณ์ดูแลสุขอนามัย</option>
+                    <option value="">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
+                    <option value="">อุปกรณ์ปฐมพยาบาล</option>
+                </select>
+
+                <label for="filter-price">สถานะ:</label>
+                <select id="filter-price-list" class="filter-select">
+                    <option value="" selected hidden>เลือกสถานะอุปกรณ์</option>
+                    <option value="" selected >ทั้งหมด</option>
+                    <option value="">ซ่อมแล้ว</option>
+                    <option value="">ยังไม่ซ่อม</option>
+                </select>
+
+                <label for="filter-price">สาเหตุ:</label>
+                <select id="filter-price-list" class="filter-select">
+                    <option value="" selected hidden>เลือกสาเหตุ</option>
+                    <option value="" selected >ทั้งหมด</option>
+                    <option value="">ชำรุด</option>
+                    <option value="">หมดอายุ</option>
+                    <option value="">อื่นๆ</option>
+                </select>
+
+                <label for="">ค่าใช้จ่าย:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected hidden>ค่าใช้จ่าย</option>
+                    <option value="" selected>ต่ำกว่า 10,000 บาท</option>
+                    <option value="">10,000-50,000 บาท</option>
+                    <option value="">มากกว่า 50,000 บาท</option>
+                </select>
+
+
+                <label for="">ความถี่ในการซ่อม:</label>
+                <p>ผ่านการซ่อมมาแล้ว</p>
+                <input class="inputnumb" type="number" value="0" max="100" min="0"> ครั้ง
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <select class="select" name="option" style="margin-left: 17%; width: 11%;" onchange="location = this.value;">
+        <option value="history_fixed_page.html">รถพยาบาล</option>
+        <option value="history_fixed_page_2.html" selected>อุปกรณ์ทางการแพทย์</option>
+    </select>
+
+    <main class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ชื่ออุปกรณ์</th>
+                    <th>ชื่อผู้บันทึก</th>
+                    <th>วันที่บันทึก(ว-ด-ป)</th>
+                    <th>วันที่ซ่อมเสร็จ(ว-ด-ป)</th>
+                    <th>สาเหตุ</th>
+                    <th>สถานะ</th>
+                    <th>ค่าใช้จ่าย(บาท)</th>
+                    <th>ผ่านการซ่อมมาแล้ว(ครั้ง)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า"
+                            class="equipment-image"></td>
+                    <td>เตียงผู้ป่วยแบบไฟฟ้า</td>
+                    <td>นายเปรี้ยว แซ่บ</td>
+                    <td>22-01-2025</td>
+                    <td>22-01-2025</td>
+                    <td>อื่นๆ</td>
+                    <td>ซ่อมแล้ว</td>
+                    <td>300</td>
+                    <td>1</td>
+
+
+                </tr>
+                <tr>
+                    <td><img src="img/W-05.jpg" alt="ถังแก๊สออกซิเจน" class="equipment-image"></td>
+                    <td>รถเข็นผู้ป่วย </td>
+                    <td>นางกาแฟ ขมคอ</td>
+                    <td>22-01-2025</td>
+                    <td>23-01-2025</td>
+                    <td>ชำรุด</td>
+                    <td>ยังไม่ซ่อม</td>
+                    <td>900</td>
+                    <td>2</td>
+                </tr>
+        </table>
+    </main>
+
+    <script>
+        // สคริปต์สำหรับเปิด-ปิด Sidebar
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.querySelector(".filter-icon");
+            const sidebar = document.getElementById("filterSidebar");
+            const closeSidebar = document.querySelector(".close-sidebar");
+
+            // เปิด Sidebar
+            filterIcon.addEventListener("click", () => {
+                sidebar.classList.add("open");
+            });
+
+            // ปิด Sidebar
+            closeSidebar.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+
+            // ปิด Sidebar เมื่อคลิกนอก Sidebar
+            document.addEventListener("click", (e) => {
+                if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+        });
+        // // สคริปต์สำหรับแสดงค่าของ Slider
+        // const slider = document.getElementById("priceRange");
+        // const value = document.getElementById("value");
+
+        // const updateValue = () => {
+        //     value.textContent = slider.value;
+        // }
+        // slider.oninput = updateValue;
+        // updateValue();
+        // ตั้งค่าปฏิทิน Flatpickr
+        flatpickr("#calendarSelect", {
+            dateFormat: "Y-m-d",  // รูปแบบวันที่เป็น YYYY-MM-DD
+            onChange: function (selectedDates, dateStr, instance) {
+                // เมื่อผู้ใช้เลือกวันที่, เรียกใช้งานฟังก์ชัน updateChart
+                updateChart(dateStr);
+            }
+        });
+    </script>
+</body>
+
+</html>

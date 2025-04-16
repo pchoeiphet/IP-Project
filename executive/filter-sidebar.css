@@ -1,0 +1,33 @@
+ /* ตั้งค่า sidebar */
+ .filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* เริ่มต้นซ่อนไว้ */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+/* เมื่อ active แสดง sidebar */
+.filter-sidebar.active {
+    right: 0;
+}
+.filter-icon:hover {
+    background-color: #e0e0e0;
+}
+
+/* ปุ่มปิด sidebar */
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}

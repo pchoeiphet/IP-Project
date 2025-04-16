@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+  display: flex;
+  justify-content: flex-end;
+  /* ชิดขวา */
+  align-items: center;
+  /* ให้อยู่กลางในแกน Y */
+  gap: 15px;
+  margin-left: auto;
+  /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+  background-color: #81b3d2;
+  padding: 5px 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+  gap: 15px;
+  /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+  width: 200px;
+  /* กำหนดความกว้างใหญ่ขึ้น */
+  height: auto;
+  /* รักษาอัตราส่วน */
+}
+
+.social-links a {
+  color: black;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.top-navbar .nav-links a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  /* แบ่งระหว่าง nav-links และ cart-icon */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #bedbeb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+  /* ขยายให้เต็มพื้นที่ที่เหลือ */
+  justify-content: center;
+  /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 30px;
+  /* ขนาดรูป */
+  height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+  display: none;
+  /* ซ่อนเมนูเริ่มต้น */
+  position: absolute;
+  top: 100%;
+  /* แสดงใต้ปุ่ม */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 7px 0;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.cart-icon {
+  position: relative;
+  /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+  right: 20px;
+  /* ขยับไอคอนไปทางซ้าย */
+}
+
+.cart-icon a {
+  font-size: 1.5em;
+  /* ปรับขนาดไอคอน */
+  color: #333;
+  /* สีไอคอน */
+  text-decoration: none;
+  /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.main-navbar .nav-links a:hover {
+  color: #2d5696;
+  /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* ตารางในประวัติคำสั่งซื้อ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+thead {
+  background-color: #81b3d2 !important;
+  color: #ffffff !important;
+}
+
+thead th {
+  padding: 12px 10px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+td img {
+  width: 100px;  /* ปรับขนาดความกว้างของภาพ */
+  height: auto;  /* รักษาอัตราส่วนภาพ */
+  object-fit: cover;  /* ปรับขนาดภาพให้เต็มช่องโดยไม่ให้บิดเบี้ยว */
+}
+
+
+tbody tr:hover {
+  background-color: #f1f7fb;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+h4 {
+  color: #2d5696;
+}
+
+/* ปุ่มพิมพ์ใบเสร็จ */
+a.btn-primary {
+  background-color: #2d5696;
+  border-color: #2d5696;
+}
+
+a.btn-primary:hover {
+  background-color: #24467a;
+  border-color: #24467a;
+}
+.print-button-wrapper {
+  width: 100% !important;
+  text-align: right !important;
+  margin-top: 10px;
+}

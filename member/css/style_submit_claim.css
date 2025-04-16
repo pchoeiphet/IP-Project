@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: flex-end; /* ให้อยู่กลางในแกน X */
+    align-items: center; /* ให้อยู่กลางในแกน Y */
+    padding: 15px 20px;
+    background-color: #81B3D2;
+    color: black;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center; /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+    gap: 15px; /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+    width: 200px; /* กำหนดความกว้างใหญ่ขึ้น */
+    height: auto; /* รักษาอัตราส่วน */
+}
+
+
+.social-links a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #BEDBEB;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 30px; /* ขนาดรูป */
+    height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+    display: none; /* ซ่อนเมนูเริ่มต้น */
+    position: absolute;
+    top: 100%; /* แสดงใต้ปุ่ม */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+h1 {
+    text-align: center; /* จัดข้อความให้ตรงกลาง */
+    margin: 20px auto 0 auto; /* เพิ่มระยะห่างจากขอบบน (20px) */
+    font-size: 20px; /* ขนาดฟอนต์ */
+    font-weight: normal; /* ห้ามฟอนต์เป็นตัวหนา */
+    margin-bottom: 40px; 
+}
+/* สำหรับรูปภาพ */
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดให้อยู่กลางในแนวขวาง */
+    text-align: left; /* จัดข้อความเริ่มต้นที่ซ้าย */
+}
+
+#product-image {
+    width: 70%; /* ขนาดรูปภาพที่ 80% ของความกว้างของ container */
+    max-width: 300px; /* ขนาดสูงสุดที่ 400px */
+    border: 1px solid black; /* เส้นกรอบดำ */
+    margin-bottom: 40px; /* ระยะห่างจากชื่อ */
+}
+
+/* สำหรับชื่อสินค้าและดรอปดาวน์ */
+.info-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* จัดเนื้อหาให้อยู่ชิดซ้าย */
+    width: 100%; /* ครอบคลุมความกว้างของ container */
+    max-width: 500px; /* จำกัดขนาด */
+    margin-bottom: 20px; /* ระยะห่างจากฟอร์ม */
+    margin-right: 120px;
+}
+
+/* สำหรับชื่อของสินค้า */
+#product-name {
+    max-width:500px;
+    margin-left:9rem;
+    display:inline;
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-weight: normal; /* ตัวปกติ*/
+    margin-bottom: 15px; /* ระยะห่างจากรูปภาพ */
+}
+
+/* สำหรับแบบฟอร์ม */
+form {
+    text-align: center; /* จัดข้อความให้ตรงกลาง */
+}
+/* สำหรับการจัดตำแหน่งดรอปดาวน์และกล่องเหตุผล */
+.form-group {
+    display: flex;
+    flex-direction: column; /* จัดเนื้อหาในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ด้านซ้าย */
+    margin-bottom: 40px; /* ระยะห่างระหว่างแต่ละฟิลด์ */
+    width: 100%;
+    /* max-width: 500px; จำกัดขนาดให้อยู่ใน container */
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* จัดให้เนื้อหาอยู่ชิดซ้าย */
+    width: 100%; /* ครอบคลุมความกว้าง */
+    max-width: 500px; /* จำกัดขนาด */
+}
+
+/* สำหรับกล่องข้อความเหตุผล */
+textarea {
+    max-width: 500px; /* จำกัดขนาด */
+    padding: 10px;
+    background-color: #f5f5f5; /* สีเทาอ่อน */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px; /* เพิ่มระยะห่างจาก label */
+}
+/* สำหรับดรอปดาวน์ */
+.selected {
+    margin-top:auto;
+    display: flex;
+    margin-right: -14rem; /* ปิดการเยื้องขวา */
+    padding: 10px; /*เว้นขอบ */
+    background-color: #e0f7fa; /* สีฟ้าอ่อน */
+    border: 1px solid #000000; /* ขอบดำ */
+    border-radius: 4px; /* มุมมน */
+}
+
+select{
+    background-color:#e0f7fa ;
+    border:transparent;
+}
+
+/* สำหรับ Label */
+label {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: -350px; /*ระยะห่างจากกล่องข้อความ */
+}
+
+/* ปุ่มยืนยัน */
+button {
+    display: block;
+    margin: 20px; /* จัดปุ่มให้อยู่ตรงกลาง */
+    margin-top: -2rem;
+    margin-left: 22rem;
+    padding: 10px 20px;
+    background-color: #fcbd5e;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1); /* เพิ่มเงา*/
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+}
+
+button:hover {
+    background-color: #FFA726;
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+}

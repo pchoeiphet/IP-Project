@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    /* ชิดขวา */
+    align-items: center;
+    /* ให้อยู่กลางในแกน Y */
+    gap: 15px;
+    margin-left: auto;
+    /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+    background-color: #81B3D2;
+    padding: 5px 20px;
+
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+    gap: 15px;
+    /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+    width: 200px;
+    /* กำหนดความกว้างใหญ่ขึ้น */
+    height: auto;
+    /* รักษาอัตราส่วน */
+}
+
+
+.social-links a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+.top-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    /* แบ่งระหว่าง nav-links และ cart-icon */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #BEDBEB;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    /* ขยายให้เต็มพื้นที่ที่เหลือ */
+    justify-content: center;
+    /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 30px;
+    /* ขนาดรูป */
+    height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+    display: none;
+    /* ซ่อนเมนูเริ่มต้น */
+    position: absolute;
+    top: 100%;
+    /* แสดงใต้ปุ่ม */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart-icon {
+    position: relative;
+    /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+    right: 20px;
+    /* ขยับไอคอนไปทางซ้าย */
+}
+
+
+.cart-icon a {
+    font-size: 1.5em;
+    /* ปรับขนาดไอคอน */
+    color: #333;
+    /* สีไอคอน */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.main-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+.order {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    margin: 20px auto;
+    justify-content: space-betweens;
+    position: relative;
+    /* เพื่อให้ตำแหน่งของปุ่มสัมพันธ์กับ .order */
+}
+
+.order img {
+    width: 400px;
+    height: 400px;
+    margin-right: 20px;
+    margin-bottom: 80px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 50px;
+    justify-content: flex-end;
+}
+
+.quantity button {
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.quantity button:hover {
+    background-color: #8FB8CD;
+    color: white;
+}
+
+.quantity input {
+    width: 45px;
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 50px;
+    /* ลดระยะห่างระหว่างภาพและปุ่มด้านล่าง */
+}
+
+.product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.product-details h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.price {
+    font-size: 18px;
+    color: #E88B71;
+    font-weight: bold;
+}
+
+.detail {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center; /* จัดข้อความให้อยู่ตรงกลางในแนว Y */
+    gap: 5px; /* เพิ่มช่องว่างระหว่างข้อความ */
+    margin-top: 350px;
+    margin-left: 750px;
+    position: absolute;
+}
+
+.quantity-controls p {
+    margin: 0; /* ลบ margin พื้นฐานที่อาจมีใน <p> */
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+.quantity-controls span {
+    margin-left: 5px; /* เพิ่มระยะห่างระหว่างจำนวนและคำว่า "ชิ้น" */
+}
+
+
+.order-buttons {
+    position: absolute;
+    bottom: 10px;
+    /* ลดระยะห่างจากด้านล่าง */
+    right: 20px;
+    /* ลดระยะห่างจากด้านขวา */
+    display: flex;
+    gap: 10px;
+}
+
+.order-buttons a {
+    background-color: #F8E6DE;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.order-buttons .add-to-cart {
+    background-color: #F8E6DE;
+}
+
+.order-buttons .confirm-order {
+    background-color: #FFB898;
+}
+
+.order-buttons a:hover {
+    background-color: #fc9362;
+}

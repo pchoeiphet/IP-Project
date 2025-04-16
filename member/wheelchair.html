@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_product_details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Document</title>
+    <script src="javascrip_member/wheelchair.js" defer></script>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <nav class="nav-links">
+            <div><a href="order_emergency.php">ชำระเงินเคสฉุกเฉิน</a></div>
+            <div><a href="contact.html">ติดต่อเรา</a></div>
+            <div class="dropdown">
+                <img src="image/user.png" alt="Logo" class="nav-logo">
+                <div class="dropdown-menu">
+                    <a href="profile.html">โปรไฟล์</a>
+                    <a href="history.php">ประวัติคำสั่งซื้อ</a>
+                    <a href="history_ambulance_booking.php">ประวัติการจองรถ</a>
+                    <a href="claim.php">เคลมสินค้า</a>
+                    <a href="../logout.php">ออกจากระบบ</a>
+                </div>
+            </div>
+            <a href="index.php">
+                <img src="image/united-states-of-america.png" alt="Logo" class="nav-logo">
+            </a>
+        </nav>
+    </div>
+    <!-- Navbar ชั้นล่าง -->
+    <div class="main-navbar">
+        <nav class="nav-links">
+            <div><a href="index.php">หน้าแรก</a></div>
+            <div><a href="reservation_car.html">จองคิวรถ</a></div>
+            <a href="index.php">
+                <img src="image/Logo.png" alt="Logo" class="nav-logo1">
+            </a>
+            <div><a href="shopping.php" style="color: E88B71;">ซื้อ/เช่าอุปกรณ์ทางการแพทย์</a></div>
+        </nav>
+
+        <div class="cart-icon">
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+
+    <section class="order">
+        <img src="image/รถเข็น.jpg" alt="">
+        <div class="list">
+            <p class="name">รถเข็นผู้ป่วย(ST-YK9063 Double Cross Wheelchair)</p><br><br>
+            <p class="cost">฿ 5,500</p>
+
+            <!-- ย้ายส่วนเพิ่ม/ลด จำนวนไปข้างบนปุ่ม -->
+            <div class="quantity">
+                <button class="btn-decrease">-</button>
+                <input type="number" class="quantity-input" value="1" min="1" max="12" />
+                <button class="btn-increase">+</button>
+                <p>มีทั้งหมด 12 ชิ้น</p>
+            </div>
+        </div>
+
+        <!-- ปุ่มอยู่ที่นี่ -->
+        <div class="order-buttons">
+            <a class="add-to-cart">เพิ่มไปยังตะกร้า</a>
+            <a href="payment.html" class="confirm-order">ยืนยันการสั่งซื้อ</a>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

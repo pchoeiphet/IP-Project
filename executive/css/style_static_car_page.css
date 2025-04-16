@@ -1,0 +1,281 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Responsive font */
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.checkbox{
+    margin-top:1rem;
+    width: 100%;
+}
+
+.inputnumb{
+    display:inline-block;
+    width: 20%;
+    border: #ccc solid 1px;
+    border-radius: 3px;
+    padding:2%;
+}
+
+.input-age{
+    width: 20%;
+    padding: 5px;
+    border: #ccc solid 1px;
+    border-radius: 5px;
+}
+
+.header-static-car-page{
+    text-align:center;
+    margin-top:1rem;
+}
+
+
+.month-selected{
+    width: 35%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* สไตล์สำหรับช่องค้นหา */
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ช่องว่างระหว่าง search bar และ filter */
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.search-container {
+    position: relative;
+    /* ทำให้ปุ่มสามารถวางไอคอนที่ขวาสุดของ input */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 300px;
+    /* ความกว้างของช่องค้นหา */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding-right: 40px;
+    /* ให้มีพื้นที่ข้างขวา สำหรับไอคอนแว่นขยาย */
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    /* ให้ไอคอนอยู่ขวาสุดภายในช่องค้นหา */
+    top: 50%;
+    /* ขยับไอคอนให้ตรงกลางในแนวแกน Y */
+    transform: translateY(-50%);
+    /* ชดเชยเพื่อให้ไอคอนอยู่ตรงกลางพอดี */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+    /* ให้ไอคอนอยู่เหนือช่องค้นหา */
+}
+
+.search-button i {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.search-button:hover i {
+    color: #81B3D2;
+    /* เปลี่ยนสีไอคอนเมื่อ hover */
+}
+
+/* Filter Icon */
+.filter-icon {
+    margin-left: auto;
+    /* ดันไอคอน Filter ไปขวาสุด */
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Sidebar */
+.filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* เริ่มต้นซ่อนอยู่ด้านขวา */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.filter-sidebar.open {
+    right: 0;
+    /* แสดง Sidebar */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #81B3D2;
+    color: #fff;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.label-text{
+    font-size: large;
+    font-weight: bold;
+    margin-left: 3rem;
+}
+
+/* Header styles */
+.header {
+    position: sticky;
+    background: #f0f8ff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: #4169e1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-item {
+    padding: 0.5rem 0;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #000000;
+}
+
+/* Main content */
+.main-content {
+    padding: 1rem;
+}
+
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .header {
+        position: sticky;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .equipment-card {
+        flex-direction: row;
+    }
+
+    .equipment-image {
+        width: 200px;
+        height: 150px;
+        margin-right: 2rem;
+    }
+    .btnv2 {
+        width: 10%; /* ให้ปุ่มใช้ความกว้างเต็มที่ในหน้าจอขนาดเล็ก */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .equipment-card {
+        flex-direction: column;
+    }
+
+    .equipment-image {
+        width: 100%;
+        height: auto;
+    }
+}

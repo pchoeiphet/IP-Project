@@ -1,0 +1,86 @@
+/* ตั้งค่าพื้นฐานให้ทุกองค์ประกอบไม่มี margin และ padding เพื่อความสม่ำเสมอ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* สไตล์ของแถบเมนูนำทาง (Navigation bar) */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F2B6C; /* สีพื้นหลังน้ำเงินเข้ม */
+    padding: 25px; /* เพิ่มระยะห่างของเนื้อหาภายใน nav */
+}
+
+/* สไตล์ของรายการเมนูในแถบ Navigation */
+nav ul {
+    list-style: none; /* ลบจุดหน้า list */
+    display: flex;
+    gap: 20px; /* กำหนดระยะห่างระหว่างรายการ */
+    margin: 0;
+    padding: 0;
+}
+
+/* สไตล์ของลิงก์ในเมนู นำทาง */
+nav ul a {
+    color: white;
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+}
+
+/* เปลี่ยนสีของลิงก์เมื่อโฮเวอร์ (hover) */
+nav ul a:hover {
+    color: #8BBAD4; /* เปลี่ยนเป็นสีน้ำเงินอ่อน */
+}
+
+/* สไตล์ของส่วนหัวของหน้าเว็บ (Title) */
+.title {
+    text-align: center; /* จัดข้อความตรงกลาง */
+    background-color: #8BBAD4; /* สีพื้นหลังฟ้าอ่อน */
+    padding: 30px; /* เพิ่มช่องว่างรอบหัวข้อ */
+}
+
+/* สไตล์ของปฏิทิน FullCalendar */
+#calendar {
+    max-width: 1100px; /* กำหนดขนาดสูงสุดของปฏิทิน */
+    margin: 40px auto; /* จัดให้ปฏิทินอยู่กึ่งกลาง */
+    padding-top: 50px; /* เพิ่มระยะห่างด้านบน */
+}
+
+/* ตั้งค่าพื้นหลังของเว็บไซต์ */
+body {
+    font-family: Prompt, sans-serif; /* ใช้ฟอนต์ภาษาไทย */
+    background-color: #f0f8ff; /* สีพื้นหลังอ่อนเพื่อให้อ่านง่าย */
+}
+
+/* ส่วนแสดงตำนานสี (Legend) ของประเภท Event */
+.legend {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 20px;
+    gap: 5px;
+}
+
+/* ขนาดของกล่องสีใน legend */
+.legend span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+/* สีของจองรถพยาบาล (Ambulance Booking) */
+.amBooking {
+    background-color: #3498DB;
+}
+
+/* สีของจองอีเวนต์ (Event Booking) */
+.evBooking {
+    background-color: #9B59B6;
+}
+
+.fnBooking {
+    background-color: #999;
+}

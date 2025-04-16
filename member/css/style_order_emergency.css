@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.top-navbar .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    /* ชิดขวา */
+    align-items: center;
+    /* ให้อยู่กลางในแกน Y */
+    gap: 15px;
+    margin-left: auto;
+    /* เพิ่มเพื่อดันให้ทั้งหมดชิดขวา */
+    background-color: #81B3D2;
+    padding: 5px 20px;
+
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    /* จัดให้เนื้อหาใน nav-links อยู่กลางในแนว Y */
+    gap: 15px;
+    /* เพิ่มช่องว่างระหว่างปุ่มหรือภาพ */
+}
+
+.nav-logo1 {
+    width: 200px;
+    /* กำหนดความกว้างใหญ่ขึ้น */
+    height: auto;
+    /* รักษาอัตราส่วน */
+}
+
+
+.social-links a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.social-links a:last-child {
+    margin-right: 0;
+}
+
+.top-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+
+
+
+
+/* Navbar ชั้นล่าง */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    /* แบ่งระหว่าง nav-links และ cart-icon */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #BEDBEB;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    /* ขยายให้เต็มพื้นที่ที่เหลือ */
+    justify-content: center;
+    /* จัดให้ nav-links อยู่กลาง */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+
+
+/* ตั้งค่า Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-logo {
+    width: 30px;
+    /* ขนาดรูป */
+    height: auto;
+}
+
+/* เมนูดรอปดาวน์ */
+.dropdown-menu {
+    display: none;
+    /* ซ่อนเมนูเริ่มต้น */
+    position: absolute;
+    top: 100%;
+    /* แสดงใต้ปุ่ม */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+/* ลิงก์ในดรอปดาวน์ */
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* แสดงเมนูเมื่อโฮเวอร์ */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart-icon {
+    position: relative;
+    /* เพิ่ม position เพื่อให้สามารถขยับตำแหน่งได้ */
+    right: 20px;
+    /* ขยับไอคอนไปทางซ้าย */
+}
+
+
+.cart-icon a {
+    font-size: 1.5em;
+    /* ปรับขนาดไอคอน */
+    color: #333;
+    /* สีไอคอน */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ */
+}
+
+.cart-icon a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีไอคอนเมื่อชี้ */
+}
+
+.main-navbar .nav-links a:hover {
+    color: #2D5696;
+    /* เปลี่ยนสีเมื่อเมาส์ไปวาง */
+}
+
+
+
+
+/* สไตล์สำหรับช่องค้นหา */
+.search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ช่องว่างระหว่าง search bar และ filter */
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.search-container {
+    position: relative;
+    /* ทำให้ปุ่มสามารถวางไอคอนที่ขวาสุดของ input */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 300px;
+    /* ความกว้างของช่องค้นหา */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding-right: 40px;
+    /* ให้มีพื้นที่ข้างขวา สำหรับไอคอนแว่นขยาย */
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    /* ให้ไอคอนอยู่ขวาสุดภายในช่องค้นหา */
+    top: 50%;
+    /* ขยับไอคอนให้ตรงกลางในแนวแกน Y */
+    transform: translateY(-50%);
+    /* ชดเชยเพื่อให้ไอคอนอยู่ตรงกลางพอดี */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+    /* ให้ไอคอนอยู่เหนือช่องค้นหา */
+}
+
+.search-button i {
+    font-size: 18px;
+    color: #aaa;
+}
+
+.search-button:hover i {
+    color: #81B3D2;
+    /* เปลี่ยนสีไอคอนเมื่อ hover */
+}
+
+
+/* ปุ่ม Reset */
+.reset-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reset-btn:hover {
+    background-color: darkred;
+}
+
+/* สไตล์ของตาราง */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.styled-table th, 
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #81B3D2;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.styled-table tr:hover {
+    background-color: #f1f3f5;
+    transition: 0.3s;
+}
+
+.styled-table td a {
+    text-decoration: none;
+    color: #2D5696;
+    font-weight: bold;
+}
+
+.styled-table td a:hover {
+    text-decoration: underline;
+}
+

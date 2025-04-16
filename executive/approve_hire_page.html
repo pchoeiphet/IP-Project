@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styletable.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <title>อนุมัติคำสั่งซื้อ/เช่า</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="img/logo.jpg" alt="" class="logo">
+            <h1 href="ceo_home_page.html" style="font-family: Itim;">CEO - HOME</h1>
+        </div>
+        <nav class="nav" style="margin-left: 20%;">
+            <a href="#" class="nav-item active">อนุมัติคำสั่งซื้อ/เช่า</a>
+            <a href="approve_clam_page.html" class="nav-item">อนุมัติเคลม</a>
+            <a href="summary_page.html" class="nav-item">สรุปยอดขาย</a>
+            <a href="case_report_page.html" class="nav-item">ดูสรุปรายงานเคส</a>
+            <a href="history_fixed_page.html" class="nav-item">ประวัติการส่งซ่อมรถและอุปกรณ์การแพทย์</a>
+            <a href="static_car_page.html" class="nav-item">สถิติการใช้งานรถ</a>
+        </nav>
+    </header>
+    <br>
+
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" placeholder="ระบุชื่อสินค้า..." class="search-input">
+            <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i> <!-- ไอคอนแว่นขยาย -->
+            </button>
+        </div>
+        <div class="filter-icon">
+            <i class="fa-solid fa-filter"></i> <!-- ไอคอน Filter -->
+        </div>
+
+        <div class="filter-sidebar" id="filterSidebar">
+            <div class="sidebar-header">
+                <h2>ตัวกรอง</h2>
+                <button class="close-sidebar">&times;</button>
+            </div>
+
+            <div class="sidebar-content">
+                <label for="">ช่วงวันที่สั่งสินค้า:</label>
+                <input class="month-selected" id="calendarSelect" type="text" placeholder="วัน/เดือน/ปี" value="20/05/2025" > ถึง
+                <input class="month-selected" id="calendarSelect" type="text" placeholder="วัน/เดือน/ปี" value="20/05/2025" >
+
+
+                <label for="filter-quantity">จำนวน:</label>
+                <select id="filter-quantity-list" class="filter-select">
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="ambulance">น้อยสุด-มากสุด</option>
+                    <option value="event">มากสุด-น้อยสุด</option>
+                </select>
+                <label for="">ค่ามัดจำ:</label>
+                <select id="filter-deposit-list" class="filter-select">
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="first">น้อยสุด-มากสุด</option>
+                    <option value="ิbasic">มากสุด-น้อยสุด</option>
+                </select>
+
+                <label for="equipment-filter">ประเภทอุปกรณ์:</label>
+                <select id="equipment-filter-list" class="filter-select">
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">อุปกรณ์วัดและตรวจสุขภาพ</option>
+                    <option value="">อุปกรณ์ช่วยการเคลื่อนไหว</option>
+                    <option value="">อุปกรณ์สำหรับการฟื้นฟูและกายภาพบำบัด</option>
+                    <option value="">อุปกรณ์ดูแลสุขอนามัย</option>
+                    <option value="">อุปกรณ์ช่วยหายใจและระบบทางเดินหายใจ</option>
+                    <option value="">อุปกรณ์ปฐมพยาบาล</option>
+                </select>
+
+                <label for="">วันที่ส่งคำขออนุมัติ:</label>
+                <select id="" class="filter-select">
+                    <option value="" selected>ทั้งหมด</option>
+                    <option value="">เก่าสุด-ล่าสุด</option>
+                    <option value="">ล่าสุด-เก่าสุด</option>
+                </select>
+
+                <label for="">ช่วงราคาสินค้า:</label>
+                <div class="price-range">
+                    <input type="number" id="minPrice" placeholder="ต่ำสุด" min="0" max="1000000" value="0">
+                    <input type="range" id="minPriceRange" min="0" max="1000000" step="100" value="0"
+                        oninput="updateMinPrice()">
+                    <input type="range" id="maxPriceRange" min="0" max="1000000" step="100" value="1000000"
+                        oninput="updateMaxPrice()">
+                    <input type="number" id="maxPrice" placeholder="สูงสุด" min="0" max="1000000" value="1000000">
+                </div>
+
+                <!-- ทำปุ่ม ยืนยัน / รีเซ็ต หลังพรี -->
+                <!-- <button id="applyFilter" class="filter-button" style="margin-top: 10px;">ใช้ตัวกรอง</button> -->
+            </div>
+        </div>
+    </div>
+
+    <select class="select" name="option" style="margin-left: 2%;" onchange="location = this.value;">
+        <option value="approve_page.html">อนุมัติคำสั่งซื้อ</option>
+        <option value="approve_hire_page.html" selected>อนุมัติการเช่า</option>
+    </select>
+
+    <main class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ชื่ออุปกรณ์</th>
+                    <th>ชื่อผู้เช่า</th>
+                    <th>จำนวน</th>
+                    <th>ระยะเวลาการเช่า(ว-ด-ป)</th>
+                    <th>ค่ามัดจำ (บาท)</th>
+                    <th> <input type="checkbox" id="select-all"> อนุมัติทั้งหมด</th>
+                    <th> <input type="checkbox" id="select-all2"> ไม่อนุมัติทั้งหมด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <img src="img/o_1hn2oukpa1qdf16nr1nk3vk5bfgb.jpg" alt="เตียงผู้ป่วยแบบไฟฟ้า"
+                            class="equipment-image"></td>
+                    <td>เตียงผู้ป่วยแบบไฟฟ้า</td>
+                    <td>นายศูนย์รถ โบ้งบาง</td>
+                    <td>2</td>
+                    <td>01-12-2024 ถึง 01-01-2025</td>
+                    <td>70,000</td>
+                    <td> <input type="checkbox" class=".item-checkbox"> อนุมัติ</td>
+                    <td> <input type="checkbox" class=".item-checkbox"> ไม่อนุมัติ</td>
+
+                </tr>
+                <tr>
+                    <td><img src="img/original-1689327506685.png" alt="ถังแก๊สออกซิเจน" class="equipment-image"></td>
+                    <td>ถังแก๊สออกซิเจน</td>
+                    <td>นายหนึ่ง หิวข้าว</td>
+                    <td>2</td>
+                    <td>22-01-2025 ถึง 30-01-2025</td>
+                    <td>9,000</td>
+                    <td> <input type="checkbox" class=".item-checkbox"> อนุมัติ</td>
+                    <td> <input type="checkbox" class=".item-checkbox"> ไม่อนุมัติ</td>
+                </tr>
+        </table>
+    </main>
+
+    <div class="button-group-2">
+        <button onclick="alert('อนุมัติเรียบร้อยแล้ว')" class="btn btn-approve">อนุมัติที่เลือก</button>
+        <button class="btn btn-reject">ไม่อนุมัติ</button>
+    </div>
+
+    <script>
+        // สคริปต์สำหรับเปิด-ปิด Sidebar
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterIcon = document.querySelector(".filter-icon");
+            const sidebar = document.getElementById("filterSidebar");
+            const closeSidebar = document.querySelector(".close-sidebar");
+
+            // เปิด Sidebar
+            filterIcon.addEventListener("click", () => {
+                sidebar.classList.add("open");
+            });
+
+            // ปิด Sidebar
+            closeSidebar.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+
+            // ปิด Sidebar เมื่อคลิกนอก Sidebar
+            document.addEventListener("click", (e) => {
+                if (!sidebar.contains(e.target) && !filterIcon.contains(e.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+        });
+        // ตั้งค่าปฏิทิน Flatpickr
+        flatpickr("#calendarSelect", {
+            dateFormat: "Y-m",  // รูปแบบวันที่เป็น YYYY-MM
+            plugins: [
+                new monthSelectPlugin({
+                    shorthand: true,  // ใช้ชื่อย่อของเดือน
+                    dateFormat: "Y-m",  // รูปแบบวันที่
+                    altFormat: "F Y"  // รูปแบบการแสดงผลเป็น Full Month และ Year
+                })
+            ],
+            onChange: function (selectedDates, dateStr, instance) {
+                updateChart(dateStr);
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterButton = document.getElementById("applyFilter");
+
+            filterButton.addEventListener("click", () => {
+                const filterQuantity = document.getElementById("filter-quantity-list").value;
+                const filterDeposit = document.getElementById("filter-deposit-list").value;
+                const equipmentCards = Array.from(document.querySelectorAll(".equipment-card"));
+
+                if (filterQuantity) {
+                    if (filterQuantity === "ambulance") { // น้อยสุด-มากสุด
+                        equipmentCards.sort((a, b) => {
+                            const quantityA = parseInt(a.querySelector(".equipment-info:nth-of-type(2)").textContent.replace(/[^0-9]/g, ""));
+                            const quantityB = parseInt(b.querySelector(".equipment-info:nth-of-type(2)").textContent.replace(/[^0-9]/g, ""));
+                            return quantityA - quantityB;
+                        });
+                    } else if (filterQuantity === "event") { // มากสุด-น้อยสุด
+                        equipmentCards.sort((a, b) => {
+                            const quantityA = parseInt(a.querySelector(".equipment-info:nth-of-type(2)").textContent.replace(/[^0-9]/g, ""));
+                            const quantityB = parseInt(b.querySelector(".equipment-info:nth-of-type(2)").textContent.replace(/[^0-9]/g, ""));
+                            return quantityB - quantityA;
+                        });
+                    }
+                }
+
+                if (filterDeposit) {
+                    if (filterDeposit === "first") { // น้อยสุด-มากสุด
+                        equipmentCards.sort((a, b) => {
+                            const depositA = parseInt(a.querySelector(".equipment-info:nth-of-type(4)").textContent.replace(/[^0-9]/g, ""));
+                            const depositB = parseInt(b.querySelector(".equipment-info:nth-of-type(4)").textContent.replace(/[^0-9]/g, ""));
+                            return depositA - depositB;
+                        });
+                    } else if (filterDeposit === "basic") { // มากสุด-น้อยสุด
+                        equipmentCards.sort((a, b) => {
+                            const depositA = parseInt(a.querySelector(".equipment-info:nth-of-type(4)").textContent.replace(/[^0-9]/g, ""));
+                            const depositB = parseInt(b.querySelector(".equipment-info:nth-of-type(4)").textContent.replace(/[^0-9]/g, ""));
+                            return depositB - depositA;
+                        });
+                    }
+                }
+
+                // อัปเดต DOM หลังการเรียง
+                const approvalSection = document.querySelector(".approval-section");
+                approvalSection.innerHTML = "";
+                equipmentCards.forEach(card => approvalSection.appendChild(card));
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // ตั้งค่าปฏิทิน Flatpickr สำหรับฟิลด์วันที่แรก
+            flatpickr("#calendarSelect", {
+                dateFormat: "d/m/Y",  // รูปแบบวันที่เป็น วัน/เดือน/ปี (เช่น 01/01/2024)
+                onChange: function (selectedDates, dateStr, instance) {
+                    updateChart(dateStr);
+                }
+            });
+
+            // ตั้งค่าปฏิทิน Flatpickr สำหรับฟิลด์วันที่ที่สอง
+            flatpickr("#calendarSelect2", {
+                dateFormat: "d/m/Y",  // รูปแบบวันที่เป็น วัน/เดือน/ปี (เช่น 01/01/2024)
+                onChange: function (selectedDates, dateStr, instance) {
+                    updateChart(dateStr);
+                }
+            });
+        });
+
+
+
+
+        function updateMaxPrice() {
+            var maxPriceRange = document.getElementById('maxPriceRange');
+            var maxPriceInput = document.getElementById('maxPrice');
+            var minPriceRange = document.getElementById('minPriceRange');
+
+            maxPriceInput.value = maxPriceRange.value;
+            if (parseInt(maxPriceRange.value) < parseInt(minPriceRange.value)) {
+                minPriceRange.value = maxPriceRange.value;
+                document.getElementById('minPrice').value = maxPriceRange.value;
+            }
+        }
+
+        function onClick(){
+            alert('อนุมัติเรียบร้อยแล้ว');
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
